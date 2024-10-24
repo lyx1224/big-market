@@ -1,6 +1,8 @@
 package cn.lyx.domain.strategy.repository;
 
 import cn.lyx.domain.strategy.model.entity.StrategyAwardEntity;
+import cn.lyx.domain.strategy.model.entity.StrategyEntity;
+import cn.lyx.domain.strategy.model.entity.StrategyRuleEntity;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -14,9 +16,16 @@ import java.util.Map;
 public interface IStrategyRepository {
     List<StrategyAwardEntity> queryStrategyAwardList(Long strategyId);
 
-    void storeStrategyAwardSearchRateTable(Long strategyId, Integer rateRange, Map<Integer, Integer> strategyAwardSearchRateTable);
+    void storeStrategyAwardSearchRateTable(String key, Integer rateRange, Map<Integer, Integer> strategyAwardSearchRateTable);
 
     Integer getRateRange(Long strategyId);
 
-    Integer getStrategyAwardAssemble(Long strategyId, Integer rateKey);
+    Integer getStrategyAwardAssemble(String key, Integer rateKey);
+
+    StrategyEntity queryStrategyEntityByStrategyIdList(Long strategyId);
+
+    StrategyRuleEntity queryStrategyRule(Long strategyId, String ruleModel);
+
+    int getRateRange(String key);
+
 }

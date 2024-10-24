@@ -8,5 +8,5 @@ package cn.lyx.domain.strategy.service.armory;
 public interface IStrategyArmory {
     boolean assembleLotteryStrategy(Long strategyId);
 
-    Integer getRandomAwardId(Long strategyId);
+
 }

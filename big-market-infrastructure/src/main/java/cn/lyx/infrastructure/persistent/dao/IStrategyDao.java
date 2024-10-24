@@ -1,5 +1,6 @@
 package cn.lyx.infrastructure.persistent.dao;
 
+import cn.lyx.domain.strategy.model.entity.StrategyEntity;
 import cn.lyx.infrastructure.persistent.po.Strategy;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,4 +14,6 @@ import java.util.List;
 @Mapper
 public interface IStrategyDao {
     List<Strategy> queryStrategyList();
+
+    Strategy queryStrategyByStrategyId(Long strategyId);
 }
