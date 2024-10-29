@@ -2,7 +2,7 @@ package cn.lyx.domain.strategy.service.rule.impl;
 
 import cn.lyx.domain.strategy.model.entity.RuleActionEntity;
 import cn.lyx.domain.strategy.model.entity.RuleMatterEntity;
-import cn.lyx.domain.strategy.model.vo.RuleLogicCheckTypeVO;
+import cn.lyx.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
 import cn.lyx.domain.strategy.repository.IStrategyRepository;
 import cn.lyx.domain.strategy.service.annotation.LogicStrategy;
 import cn.lyx.domain.strategy.service.rule.ILogicFilter;

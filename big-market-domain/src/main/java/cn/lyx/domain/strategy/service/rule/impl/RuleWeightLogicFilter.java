@@ -2,7 +2,7 @@ package cn.lyx.domain.strategy.service.rule.impl;
 
 import cn.lyx.domain.strategy.model.entity.RuleActionEntity;
 import cn.lyx.domain.strategy.model.entity.RuleMatterEntity;
-import cn.lyx.domain.strategy.model.vo.RuleLogicCheckTypeVO;
+import cn.lyx.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
 import cn.lyx.domain.strategy.repository.IStrategyRepository;
 import cn.lyx.domain.strategy.service.annotation.LogicStrategy;
 import cn.lyx.domain.strategy.service.rule.ILogicFilter;
@@ -59,9 +59,10 @@ public class RuleWeightLogicFilter implements ILogicFilter<RuleActionEntity.Raff
 
         // 3. 找出最小符合的值，也就是【4500 积分，能找到 4000:102,103,104,105】、【5000 积分，能找到 5000:102,103,104,105,106,107】
         Long nextValue = analyticalSortedKeys.stream()
-                .filter(key -> userScore >= key)
-                .findFirst()
+                .filter(key -> key <= userScore)
+                .max(Long::compare)
                 .orElse(null);
+
 
         if (null != nextValue) {
             return RuleActionEntity.<RuleActionEntity.RaffleBeforeEntity>builder()

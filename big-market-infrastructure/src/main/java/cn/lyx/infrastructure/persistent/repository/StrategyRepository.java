@@ -3,6 +3,7 @@ package cn.lyx.infrastructure.persistent.repository;
 import cn.lyx.domain.strategy.model.entity.StrategyAwardEntity;
 import cn.lyx.domain.strategy.model.entity.StrategyEntity;
 import cn.lyx.domain.strategy.model.entity.StrategyRuleEntity;
+import cn.lyx.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 import cn.lyx.domain.strategy.repository.IStrategyRepository;
 import cn.lyx.infrastructure.persistent.dao.IStrategyAwardDao;
 import cn.lyx.infrastructure.persistent.dao.IStrategyDao;
@@ -87,7 +88,6 @@ public class StrategyRepository implements IStrategyRepository {
         strategyRule.setStrategyId(strategyId);
         strategyRule.setAwardId(awardId);
         strategyRule.setRuleModel(ruleModel);
-        StrategyRule temp=strategyRuleDao.queryStrategyRule(strategyRule);
         return strategyRuleDao.queryStrategyRuleValue(strategyRule);
     }
 
@@ -105,6 +105,15 @@ public class StrategyRepository implements IStrategyRepository {
                 .build();
         redisService.setValue(cacheKey,strategyEntity);
         return strategyEntity;
+    }
+
+    @Override
+    public StrategyAwardRuleModelVO queryStrategyAwardRuleModelVO(Long strategyId, Integer awardId) {
+        StrategyAward strategyAward = new StrategyAward();
+        strategyAward.setStrategyId(strategyId);
+        strategyAward.setAwardId(awardId);
+        String ruleModels = strategyAwardDao.queryStrategyAwardRuleModels(strategyAward);
+        return StrategyAwardRuleModelVO.builder().ruleModels(ruleModels).build();
     }
 
     @Override
