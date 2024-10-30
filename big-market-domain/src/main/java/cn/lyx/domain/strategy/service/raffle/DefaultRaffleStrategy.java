@@ -5,9 +5,11 @@ import cn.lyx.domain.strategy.model.entity.RuleActionEntity;
 import cn.lyx.domain.strategy.model.entity.RuleMatterEntity;
 import cn.lyx.domain.strategy.model.valobj.RuleLogicCheckTypeVO;
 import cn.lyx.domain.strategy.repository.IStrategyRepository;
+import cn.lyx.domain.strategy.service.AbstractRaffleStrategy;
 import cn.lyx.domain.strategy.service.armory.IStrategyDispatch;
-import cn.lyx.domain.strategy.service.rule.ILogicFilter;
-import cn.lyx.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import cn.lyx.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+import cn.lyx.domain.strategy.service.rule.filter.ILogicFilter;
+import cn.lyx.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
@@ -25,12 +27,12 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 @Service
-public class DefaultRaffleStrategy extends AbstractRaffleStrategy{
+public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
     @Resource
     private DefaultLogicFactory logicFactory;
 
-    public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch) {
-        super(repository, strategyDispatch);
+    public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch, DefaultChainFactory defaultChainFactory) {
+        super(repository, strategyDispatch,defaultChainFactory);
     }
 
     @Override

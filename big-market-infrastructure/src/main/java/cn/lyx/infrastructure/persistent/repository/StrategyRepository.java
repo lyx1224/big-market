@@ -92,6 +92,11 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
+    public String queryStrategyRuleValue(Long strategyId, String ruleModel) {
+        return queryStrategyRuleValue(strategyId,null,ruleModel);
+    }
+
+    @Override
     public StrategyEntity queryStrategyEntityByStrategyId(Long strategyId) {
         //优先从缓存中获取
         String cacheKey = Constants.RedisKey.STRATEGY_KEY + strategyId;

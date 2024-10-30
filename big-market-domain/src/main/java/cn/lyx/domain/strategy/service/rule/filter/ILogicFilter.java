@@ -1,4 +1,4 @@
-package cn.lyx.domain.strategy.service.rule;
+package cn.lyx.domain.strategy.service.rule.filter;
 
 import cn.lyx.domain.strategy.model.entity.RuleActionEntity;
 import cn.lyx.domain.strategy.model.entity.RuleMatterEntity;

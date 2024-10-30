@@ -1,6 +1,6 @@
 package cn.lyx.domain.strategy.service.annotation;
 
-import cn.lyx.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import cn.lyx.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

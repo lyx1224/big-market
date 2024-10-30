@@ -1,4 +1,4 @@
-package cn.lyx.domain.strategy.service.raffle;
+package cn.lyx.domain.strategy.service;
 
 import cn.lyx.domain.strategy.model.entity.RaffleAwardEntity;
 import cn.lyx.domain.strategy.model.entity.RaffleFactorEntity;
@@ -9,7 +9,9 @@ import cn.lyx.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 import cn.lyx.domain.strategy.repository.IStrategyRepository;
 import cn.lyx.domain.strategy.service.IRaffleStrategy;
 import cn.lyx.domain.strategy.service.armory.IStrategyDispatch;
-import cn.lyx.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import cn.lyx.domain.strategy.service.rule.chain.ILogicChain;
+import cn.lyx.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+import cn.lyx.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import cn.lyx.types.enums.ResponseCode;
 import cn.lyx.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
@@ -27,9 +29,12 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
     // 策略调度服务 -> 只负责抽奖处理，通过新增接口的方式，隔离职责，不需要使用方关心或者调用抽奖的初始化
     protected IStrategyDispatch strategyDispatch;
 
-    public AbstractRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch) {
+    private DefaultChainFactory defaultChainFactory;
+
+    public AbstractRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch, DefaultChainFactory defaultChainFactory) {
         this.repository = repository;
         this.strategyDispatch = strategyDispatch;
+        this.defaultChainFactory = defaultChainFactory;
     }
 
     @Override
@@ -42,41 +47,9 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
             throw new AppException(ResponseCode.ILLEGAL_PARAMETER.getCode(), ResponseCode.ILLEGAL_PARAMETER.getInfo());
         }
 
-        // 2. 策略查询
-        StrategyEntity strategy = repository.queryStrategyEntityByStrategyId(strategyId);
-
-        // 3. 抽奖前 - 规则过滤
-        RuleActionEntity<RuleActionEntity.RaffleBeforeEntity> ruleActionEntity = this.doCheckRaffleBeforeLogic(
-                RaffleFactorEntity.builder()
-                .userId(userId)
-                .strategyId(strategyId)
-                .build(),
-                strategy.ruleModels());
-        // 抽奖过程流转的奖品id
-        Integer awardId = null;
-        if (RuleLogicCheckTypeVO.TAKE_OVER.getCode().equals(ruleActionEntity.getCode())) {
-            if (DefaultLogicFactory.LogicModel.RULE_BLACKLIST.getCode().equals(ruleActionEntity.getRuleModel())) {
-                // 黑名单返回固定的奖品ID
-                return RaffleAwardEntity.builder()
-                        .awardId(ruleActionEntity.getData().getAwardId())
-                        .build();
-            } else if (DefaultLogicFactory.LogicModel.RULE_WIGHT.getCode().equals(ruleActionEntity.getRuleModel())) {
-                // 权重根据返回的信息进行抽奖
-                RuleActionEntity.RaffleBeforeEntity raffleBeforeEntity = ruleActionEntity.getData();
-                String ruleWeightValueKey = raffleBeforeEntity.getRuleWeightValueKey();
-            // 4. rule_weight抽奖流程
-                awardId = strategyDispatch.getRandomAwardId(strategyId, ruleWeightValueKey);
-
-//                除了黑名单以外的抽奖前规则得到的awardId依然需要进行接下来的过滤，所以不能直接返回
-//                return RaffleAwardEntity.builder()
-//                        .awardId(awardId)
-//                        .build();
-            }
-        }
-        else{
-            // 4. 默认抽奖流程
-            awardId = strategyDispatch.getRandomAwardId(strategyId);
-        }
+        //2.责任链处理抽奖（抽奖前规则封装）
+        ILogicChain logicChain = defaultChainFactory.openLogicChain(strategyId);
+        Integer awardId = logicChain.logic(userId, strategyId);
 
         // 5. 查询奖品规则「抽奖中（拿到奖品ID时，过滤规则）、抽奖后（扣减完奖品库存后过滤，抽奖中拦截和无库存则走兜底）」
         StrategyAwardRuleModelVO strategyAwardRuleModelVO = repository.queryStrategyAwardRuleModelVO(strategyId, awardId);
