@@ -1,14 +1,63 @@
-24-11-12.21:27:12.405 [main            ] INFO  LogicTreeTest          - Starting LogicTreeTest using Java 1.8.0_392 on LYx14 with PID 381720 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
-24-11-12.21:27:12.407 [main            ] INFO  LogicTreeTest          - The following 1 profile is active: "dev"
-24-11-12.21:27:14.886 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-12.21:27:14.893 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-12.21:27:15.000 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 0 Redis repository interfaces.
-24-11-12.21:27:18.996 [main            ] INFO  Version                - Redisson 3.23.4
-24-11-12.21:27:20.707 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-11-12.21:27:20.767 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-11-12.21:27:28.606 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-12.21:27:29.187 [main            ] INFO  LogicTreeTest          - Started LogicTreeTest in 17.96 seconds (JVM running for 20.751)
-24-11-12.21:27:31.046 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【决策树规则；增加dall-e-3画图模型】treeId:100000001 node:rule_lock code:0000
-24-11-12.21:27:31.051 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【决策树规则；增加dall-e-3画图模型】treeId:100000001 node:rule_stock code:0001
-24-11-12.21:27:31.058 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【决策树规则；增加dall-e-3画图模型】treeId:100000001 node:rule_luck_award code:0001
-24-11-12.21:27:31.608 [main            ] INFO  LogicTreeTest          - 测试结果：{"awardId":101,"awardRuleValue":"1,100"}
+24-11-14.02:38:54.677 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_392 on LYx14 with PID 10868 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
+24-11-14.02:38:54.678 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+24-11-14.02:38:55.694 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-14.02:38:55.697 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-14.02:38:55.729 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+24-11-14.02:38:57.039 [main            ] INFO  Version                - Redisson 3.23.4
+24-11-14.02:38:57.446 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-14.02:38:57.461 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-14.02:38:59.632 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-14.02:38:59.719 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 5.442 seconds (JVM running for 6.239)
+24-11-14.02:39:00.307 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-14.02:39:00.653 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-14.02:39:00.926 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+24-11-14.02:39:01.005 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-14.02:39:01.023 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-14.02:44:28.009 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_392 on LYx14 with PID 17540 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
+24-11-14.02:44:28.010 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+24-11-14.02:44:28.731 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-14.02:44:28.734 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-14.02:44:28.762 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+24-11-14.02:44:29.881 [main            ] INFO  Version                - Redisson 3.23.4
+24-11-14.02:44:30.255 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-14.02:44:30.269 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-14.02:44:32.306 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-14.02:44:32.389 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.751 seconds (JVM running for 5.456)
+24-11-14.02:44:33.024 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-14.02:44:33.261 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-14.02:44:33.322 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+24-11-14.02:44:33.328 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+24-11-14.02:44:33.336 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId: lyx strategyId: 100006 ruleModel: rule_default awardId: 102
+24-11-14.02:44:33.336 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 lyx 100006 102 rule_default
+24-11-14.02:44:33.346 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_lock code:0000
+24-11-14.02:44:33.347 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_stock code:0001
+24-11-14.02:44:33.347 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_luck_award code:0001
+24-11-14.02:44:33.347 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树 lyx 100006 101 1,100
+24-11-14.02:44:33.601 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"lyx"}
+24-11-14.02:44:33.606 [main            ] INFO  RaffleStrategyTest     - 请求结果：{"awardConfig":"1,100","awardId":101}
+24-11-14.02:44:33.642 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-14.02:44:33.659 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-14.02:53:54.421 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_392 on LYx14 with PID 21508 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
+24-11-14.02:53:54.422 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+24-11-14.02:53:55.251 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-14.02:53:55.254 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-14.02:53:55.283 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+24-11-14.02:53:56.727 [main            ] INFO  Version                - Redisson 3.23.4
+24-11-14.02:53:57.119 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-14.02:53:57.132 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-11-14.02:53:59.458 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-14.02:53:59.568 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 5.513 seconds (JVM running for 6.312)
+24-11-14.02:54:00.404 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-14.02:54:00.685 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-14.02:54:00.751 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+24-11-14.02:54:00.767 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+24-11-14.02:54:00.781 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId: lyx strategyId: 100006 ruleModel: rule_default awardId: 102
+24-11-14.02:54:00.782 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 lyx 100006 102 rule_default
+24-11-14.02:54:00.796 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_lock code:0000
+24-11-14.02:54:00.797 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_stock code:0001
+24-11-14.02:54:00.797 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_luck_award code:0001
+24-11-14.02:54:00.797 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树 lyx 100006 101 1,100
+24-11-14.02:54:01.026 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"lyx"}
+24-11-14.02:54:01.029 [main            ] INFO  RaffleStrategyTest     - 请求结果：{"awardConfig":"1,100","awardId":101}
+24-11-14.02:54:01.060 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-14.02:54:01.076 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

@@ -3,6 +3,7 @@ package cn.lyx.domain.strategy.repository;
 import cn.lyx.domain.strategy.model.entity.StrategyAwardEntity;
 import cn.lyx.domain.strategy.model.entity.StrategyEntity;
 import cn.lyx.domain.strategy.model.entity.StrategyRuleEntity;
+import cn.lyx.domain.strategy.model.valobj.RuleTreeVO;
 import cn.lyx.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 
 import java.math.BigDecimal;
@@ -35,4 +36,6 @@ public interface IStrategyRepository {
     StrategyEntity queryStrategyEntityByStrategyId(Long strategyId);
 
     StrategyAwardRuleModelVO queryStrategyAwardRuleModelVO(Long strategyId, Integer awardId);
+
+    RuleTreeVO queryRuleTreeVOByTreeId(String treeId);
 }
