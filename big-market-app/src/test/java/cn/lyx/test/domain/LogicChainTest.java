@@ -1,13 +1,9 @@
 package cn.lyx.test.domain;
 
-import cn.lyx.domain.strategy.model.entity.RaffleAwardEntity;
-import cn.lyx.domain.strategy.model.entity.RaffleFactorEntity;
-import cn.lyx.domain.strategy.service.IRaffleStrategy;
 import cn.lyx.domain.strategy.service.armory.IStrategyArmory;
 import cn.lyx.domain.strategy.service.rule.chain.ILogicChain;
 import cn.lyx.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import cn.lyx.domain.strategy.service.rule.chain.impl.RuleWeightLogicChain;
-import cn.lyx.domain.strategy.service.rule.filter.impl.RuleLockLogicFilter;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;

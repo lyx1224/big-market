@@ -4,6 +4,7 @@ import cn.lyx.domain.strategy.model.entity.StrategyAwardEntity;
 import cn.lyx.domain.strategy.model.entity.StrategyEntity;
 import cn.lyx.domain.strategy.model.entity.StrategyRuleEntity;
 import cn.lyx.domain.strategy.repository.IStrategyRepository;
+import cn.lyx.types.common.Constants;
 import cn.lyx.types.enums.ResponseCode;
 import cn.lyx.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
@@ -25,15 +26,27 @@ import java.util.*;
 public class StrategyArmoryDispatch implements IStrategyArmory,IStrategyDispatch{
     @Resource
     private IStrategyRepository repository;
+
+    private final SecureRandom secureRandom = new SecureRandom();
     @Override
     public boolean assembleLotteryStrategy(Long strategyId) {
 
         // 1. 查询策略配置
         List<StrategyAwardEntity> strategyAwardEntities = repository.queryStrategyAwardList(strategyId);
         if(strategyAwardEntities == null||strategyAwardEntities.isEmpty()) return false;
+
+        // 2. 缓存奖品库存【用于decr扣减库存使用】
+        for (StrategyAwardEntity strategyAward : strategyAwardEntities) {
+            Integer awardId = strategyAward.getAwardId();
+            Integer awardCount = strategyAward.getAwardCount();
+            cacheStrategyAwardCount(strategyId, awardId, awardCount);
+        }
+
+
+        //3.1 全量抽奖概率
         assembleLotteryStrategy(String.valueOf(strategyId),strategyAwardEntities);
 
-        //2.权重策略配置 - 适用于rule_weight权重规则配置
+        //3.2 权重策略配置 - 适用于rule_weight权重规则配置
         StrategyEntity strategyEntity = repository.queryStrategyEntityByStrategyIdList(strategyId);
         String ruleWeight = strategyEntity.getRuleWeight();
         if(null == ruleWeight) return true;
@@ -54,6 +67,8 @@ public class StrategyArmoryDispatch implements IStrategyArmory,IStrategyDispatch
 
         return true;
     }
+
+
 
     public void assembleLotteryStrategy(String key,List<StrategyAwardEntity> strategyAwardEntities){
         // 1. 获取最小概率值
@@ -97,14 +112,42 @@ public class StrategyArmoryDispatch implements IStrategyArmory,IStrategyDispatch
 
     @Override
     public Integer getRandomAwardId(Long strategyId) {
+        // 分布式部署下，不一定为当前应用做的策略装配。也就是值不一定会保存到本应用，而是分布式应用，所以需要从 Redis 中获取。
         int rateRange = repository.getRateRange(strategyId);
-        return repository.getStrategyAwardAssemble(String.valueOf(strategyId),new SecureRandom().nextInt(rateRange));
+        // 通过生成的随机值，获取概率值奖品查找表的结果
+        return repository.getStrategyAwardAssemble(String.valueOf(strategyId), secureRandom.nextInt(rateRange));
     }
 
     @Override
     public Integer getRandomAwardId(Long strategyId, String ruleWeightValue) {
-        String key = String.valueOf(strategyId).concat("_").concat(ruleWeightValue);
-        int rateRange = repository.getRateRange(key);
-        return repository.getStrategyAwardAssemble(key,new SecureRandom().nextInt(rateRange));
+        String key = String.valueOf(strategyId).concat(Constants.UNDERLINE).concat(ruleWeightValue);
+        return getRandomAwardId(key);
     }
+
+    @Override
+    public Integer getRandomAwardId(String key) {
+        // 分布式部署下，不一定为当前应用做的策略装配。也就是值不一定会保存到本应用，而是分布式应用，所以需要从 Redis 中获取。
+        int rateRange = repository.getRateRange(key);
+        // 通过生成的随机值，获取概率值奖品查找表的结果
+        return repository.getStrategyAwardAssemble(key, secureRandom.nextInt(rateRange));
+    }
+
+    /**
+     * 缓存奖品库存到Redis
+     *
+     * @param strategyId 策略ID
+     * @param awardId    奖品ID
+     * @param awardCount 奖品库存
+     */
+    private void cacheStrategyAwardCount(Long strategyId, Integer awardId, Integer awardCount) {
+        String cacheKey = Constants.RedisKey.STRATEGY_AWARD_COUNT_KEY + strategyId + Constants.UNDERLINE + awardId;
+        repository.cacheStrategyAwardCount(cacheKey, awardCount);
+    }
+    @Override
+    public Boolean subtractionAwardStock(Long strategyId, Integer awardId) {
+        String cacheKey = Constants.RedisKey.STRATEGY_AWARD_COUNT_KEY + strategyId + Constants.UNDERLINE + awardId;
+        return repository.subtractionAwardStock(cacheKey);
+    }
+
+
 }

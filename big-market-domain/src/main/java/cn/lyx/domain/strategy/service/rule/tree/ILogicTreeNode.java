@@ -8,6 +8,6 @@ import cn.lyx.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
  * @since 2024/11/11
  */
 public interface ILogicTreeNode{
-    DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId);
+    DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId,String ruleValue);
 
 }
