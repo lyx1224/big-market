@@ -1,10 +1,13 @@
 package cn.lyx.domain.strategy.service.raffle;
 
+import cn.lyx.domain.strategy.model.entity.StrategyAwardEntity;
 import cn.lyx.domain.strategy.model.valobj.RuleTreeVO;
 import cn.lyx.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 import cn.lyx.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
 import cn.lyx.domain.strategy.repository.IStrategyRepository;
 import cn.lyx.domain.strategy.service.AbstractRaffleStrategy;
+import cn.lyx.domain.strategy.service.IRaffleAward;
+import cn.lyx.domain.strategy.service.IRaffleStock;
 import cn.lyx.domain.strategy.service.armory.IStrategyDispatch;
 import cn.lyx.domain.strategy.service.rule.chain.ILogicChain;
 import cn.lyx.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
@@ -13,6 +16,8 @@ import cn.lyx.domain.strategy.service.rule.tree.factory.engine.IDecisionTreeEngi
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author lyx
  * @description 用户抽奖流程中一些过滤规则的实现（包括before/center/after规则）
@@ -20,7 +25,7 @@ import org.springframework.stereotype.Service;
  */
 @Slf4j
 @Service
-public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
+public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRaffleAward, IRaffleStock {
     public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyDispatch strategyDispatch, DefaultChainFactory defaultChainFactory, DefaultTreeFactory defaultTreeFactory) {
         super(repository, strategyDispatch, defaultChainFactory, defaultTreeFactory);
     }
@@ -53,5 +58,10 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
     @Override
     public void updateStrategyAwardStock(Long strategyId, Integer awardId) {
         repository.updateStrategyAwardStock(strategyId, awardId);
+    }
+
+    @Override
+    public List<StrategyAwardEntity> queryRaffleStrategyAwardList(Long strategyId) {
+        return repository.queryStrategyAwardList(strategyId);
     }
 }
