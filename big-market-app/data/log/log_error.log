@@ -159,7 +159,7 @@ Caused by: java.lang.ClassNotFoundException: Cannot find class: cn.bugstack.infr
 	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
 	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
 	... 124 common frames omitted
-24-11-16.16:42:25.661 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@4988d8b8] to prepare test instance [cn.lyx.test.domain.RaffleStrategyTest@7ec95456]
+24-11-16.16:42:25.661 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@4988d8b8] to prepare test instance [cn.lyx.test.domain.strategy.RaffleStrategyTest@7ec95456]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)

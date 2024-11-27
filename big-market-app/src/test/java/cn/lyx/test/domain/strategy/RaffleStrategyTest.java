@@ -1,4 +1,4 @@
-package cn.lyx.test.domain;
+package cn.lyx.test.domain.strategy;
 
 import cn.lyx.domain.strategy.model.entity.RaffleAwardEntity;
 import cn.lyx.domain.strategy.model.entity.RaffleFactorEntity;
