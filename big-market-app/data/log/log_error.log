@@ -38,3 +38,4 @@
 24-11-28.21:45:35.702 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
 24-11-28.21:45:35.711 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
 24-11-28.21:45:35.720 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+24-11-28.21:51:05.562 [main            ] WARN  RaffleOrderTest        - 活动库存不足
