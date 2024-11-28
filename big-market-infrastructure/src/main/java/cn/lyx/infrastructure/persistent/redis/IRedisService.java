@@ -1,5 +1,8 @@
 package cn.lyx.infrastructure.persistent.redis;
 import org.redisson.api.*;
+
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author lyx
  * @description
@@ -248,6 +251,8 @@ public interface IRedisService {
 
     void setAtomicLong(String key, Integer value);
 
-    Boolean setNx(String lockKey);
+    Boolean setNx(String key);
+
+    Boolean setNx(String key, long expired, TimeUnit timeUnit);
 }
 
