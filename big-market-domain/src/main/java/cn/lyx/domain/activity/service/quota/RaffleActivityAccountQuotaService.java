@@ -1,11 +1,12 @@
-package cn.lyx.domain.activity.service;
+package cn.lyx.domain.activity.service.quota;
 
-import cn.lyx.domain.activity.model.aggregate.CreateOrderAggregate;
+import cn.lyx.domain.activity.model.aggregate.CreateQuotaOrderAggregate;
 import cn.lyx.domain.activity.model.entity.*;
 import cn.lyx.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 import cn.lyx.domain.activity.model.valobj.OrderStateVO;
 import cn.lyx.domain.activity.repository.IActivityRepository;
-import cn.lyx.domain.activity.service.rule.factory.DefaultActivityChainFactory;
+import cn.lyx.domain.activity.service.IRaffleActivitySkuStockService;
+import cn.lyx.domain.activity.service.quota.rule.factory.DefaultActivityChainFactory;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Service;
 
@@ -17,10 +18,10 @@ import java.util.Date;
  * @create 2024-03-16 08:41
  */
 @Service
-public class RaffleActivityService extends AbstractRaffleActivity implements ISkuStock {
+public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAccountQuota implements IRaffleActivitySkuStockService {
 
 
-    public RaffleActivityService(DefaultActivityChainFactory defaultActivityChainFactory, IActivityRepository activityRepository) {
+    public RaffleActivityAccountQuotaService(DefaultActivityChainFactory defaultActivityChainFactory, IActivityRepository activityRepository) {
         super(defaultActivityChainFactory, activityRepository);
     }
 
@@ -29,7 +30,7 @@ public class RaffleActivityService extends AbstractRaffleActivity implements ISk
      * 聚合对象中的信息后来会进行订单的创建和用户账户的更新
      */
     @Override
-    protected CreateOrderAggregate buildOrderAggregate(SkuRechargeEntity skuRechargeEntity, ActivitySkuEntity activitySkuEntity, ActivityEntity activityEntity, ActivityCountEntity activityCountEntity) {
+    protected CreateQuotaOrderAggregate buildOrderAggregate(SkuRechargeEntity skuRechargeEntity, ActivitySkuEntity activitySkuEntity, ActivityEntity activityEntity, ActivityCountEntity activityCountEntity) {
         // 订单实体对象
         ActivityOrderEntity activityOrderEntity = new ActivityOrderEntity();
         activityOrderEntity.setUserId(skuRechargeEntity.getUserId());
@@ -47,7 +48,7 @@ public class RaffleActivityService extends AbstractRaffleActivity implements ISk
         activityOrderEntity.setOutBusinessNo(skuRechargeEntity.getOutBusinessNo());
 
         // 构建聚合对象
-        return CreateOrderAggregate.builder()
+        return CreateQuotaOrderAggregate.builder()
                 /*
                  其他的属性用来进行update
                  */
@@ -64,7 +65,7 @@ public class RaffleActivityService extends AbstractRaffleActivity implements ISk
     }
 
     @Override
-    protected void doSaveOrder(CreateOrderAggregate createOrderAggregate) {
+    protected void doSaveOrder(CreateQuotaOrderAggregate createOrderAggregate) {
         activityRepository.doSaveOrder(createOrderAggregate);
     }
 

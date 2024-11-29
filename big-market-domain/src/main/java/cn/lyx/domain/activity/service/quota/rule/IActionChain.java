@@ -1,4 +1,4 @@
-package cn.lyx.domain.activity.service.rule;
+package cn.lyx.domain.activity.service.quota.rule;
 
 import cn.lyx.domain.activity.model.entity.ActivityCountEntity;
 import cn.lyx.domain.activity.model.entity.ActivityEntity;

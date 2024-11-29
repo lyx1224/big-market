@@ -1,13 +1,12 @@
-package cn.lyx.domain.activity.service.rule.impl;
+package cn.lyx.domain.activity.service.quota.rule.impl;
 
 import cn.lyx.domain.activity.model.entity.ActivityCountEntity;
 import cn.lyx.domain.activity.model.entity.ActivityEntity;
 import cn.lyx.domain.activity.model.entity.ActivitySkuEntity;
 import cn.lyx.domain.activity.model.valobj.ActivityStateVO;
-import cn.lyx.domain.activity.service.rule.AbstractActionChain;
+import cn.lyx.domain.activity.service.quota.rule.AbstractActionChain;
 import cn.lyx.types.enums.ResponseCode;
 import cn.lyx.types.exception.AppException;
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

@@ -1,23 +1,23 @@
-package cn.lyx.domain.activity.service;
+package cn.lyx.domain.activity.service.quota;
 
 import cn.lyx.domain.activity.model.entity.ActivityCountEntity;
 import cn.lyx.domain.activity.model.entity.ActivityEntity;
 import cn.lyx.domain.activity.model.entity.ActivitySkuEntity;
 import cn.lyx.domain.activity.repository.IActivityRepository;
-import cn.lyx.domain.activity.service.rule.factory.DefaultActivityChainFactory;
+import cn.lyx.domain.activity.service.quota.rule.factory.DefaultActivityChainFactory;
 
 /**
  * @author lyx
  * @description 抽奖活动的支撑类
  * @since 2024/11/27
  */
-public class RaffleActivitySupport {
+public class RaffleActivityAccountQuotaSupport {
 
     protected DefaultActivityChainFactory defaultActivityChainFactory;
 
     protected IActivityRepository activityRepository;
 
-    public RaffleActivitySupport(DefaultActivityChainFactory defaultActivityChainFactory, IActivityRepository activityRepository) {
+    public RaffleActivityAccountQuotaSupport(DefaultActivityChainFactory defaultActivityChainFactory, IActivityRepository activityRepository) {
         this.defaultActivityChainFactory = defaultActivityChainFactory;
         this.activityRepository = activityRepository;
     }
