@@ -15,6 +15,11 @@ import java.util.Date;
 @Data
 public abstract class BaseEvent<T> {
 
+    /**
+     * 这个事件基类中的静态类是在两个方法之前定义的
+     * 其子类中的静态类也是。。
+     */
+
     public abstract EventMessage<T> buildEventMessage(T data);
 
     public abstract String topic();
