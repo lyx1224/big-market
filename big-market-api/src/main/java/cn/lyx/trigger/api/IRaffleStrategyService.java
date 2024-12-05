@@ -2,8 +2,8 @@ package cn.lyx.trigger.api;
 
 import cn.lyx.trigger.api.dto.RaffleAwardListRequestDTO;
 import cn.lyx.trigger.api.dto.RaffleAwardListResponseDTO;
-import cn.lyx.trigger.api.dto.RaffleRequestDTO;
-import cn.lyx.trigger.api.dto.RaffleResponseDTO;
+import cn.lyx.trigger.api.dto.RaffleStrategyRequestDTO;
+import cn.lyx.trigger.api.dto.RaffleStrategyResponseDTO;
 import cn.lyx.types.model.Response;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
  * @description 抽奖服务api接口
  * @since 2024/11/17
  */
-public interface IRaffleService {
+public interface IRaffleStrategyService {
     /**
      * 策略装配接口
      *
@@ -36,7 +36,7 @@ public interface IRaffleService {
      * @param requestDTO 请求参数
      * @return 抽奖结果
      */
-    Response<RaffleResponseDTO> randomRaffle(RaffleRequestDTO requestDTO);
+    Response<RaffleStrategyResponseDTO> randomRaffle(RaffleStrategyRequestDTO requestDTO);
 
 
 }

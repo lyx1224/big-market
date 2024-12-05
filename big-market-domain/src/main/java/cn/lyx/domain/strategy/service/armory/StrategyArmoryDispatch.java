@@ -70,6 +70,7 @@ public class StrategyArmoryDispatch implements IStrategyArmory,IStrategyDispatch
 
 
 
+
     public void assembleLotteryStrategy(String key,List<StrategyAwardEntity> strategyAwardEntities){
         // 1. 获取最小概率值
         BigDecimal minAwardRate = strategyAwardEntities.stream()
@@ -149,5 +150,9 @@ public class StrategyArmoryDispatch implements IStrategyArmory,IStrategyDispatch
         return repository.subtractionAwardStock(cacheKey);
     }
 
-
+    @Override
+    public boolean assembleLotteryStrategyByActivityId(Long activityId) {
+        Long strategyId = repository.queryStrategyIdByActivityId(activityId);
+        return assembleLotteryStrategy(strategyId);
+    }
 }
