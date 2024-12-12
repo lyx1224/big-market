@@ -8,6 +8,7 @@ import cn.lyx.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 import cn.lyx.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -61,6 +62,15 @@ public interface IStrategyRepository {
      * @return 扣减结果
      */
     Boolean subtractionAwardStock(String cacheKey);
+
+    /**
+     * 缓存key，decr 方式扣减库存
+     *
+     * @param cacheKey 缓存Key
+     * @param endDataTime 缓存Key
+     * @return 扣减结果
+     */
+    Boolean subtractionAwardStock(String cacheKey, Date endDataTime);
 
     void awardStockConsumeSendQueue(StrategyAwardStockKeyVO strategyAwardStockKeyVO);
 

@@ -1,5 +1,7 @@
 package cn.lyx.domain.strategy.service.armory;
 
+import java.util.Date;
+
 /**
  * @author lyx
  * @description 策略抽奖的调度（各种抽象策略的应用）
@@ -35,7 +37,8 @@ public interface IStrategyDispatch {
      *
      * @param strategyId 策略ID
      * @param awardId    奖品ID
+     * @param endDateTime  活动结束时间，用于设置缓存加锁时间
      * @return 扣减结果
      */
-    Boolean subtractionAwardStock(Long strategyId, Integer awardId);
+    Boolean subtractionAwardStock(Long strategyId, Integer awardId, Date endDateTime);
 }

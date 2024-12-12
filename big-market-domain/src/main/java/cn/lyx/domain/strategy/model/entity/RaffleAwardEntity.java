@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * @author lyx
@@ -25,4 +26,5 @@ public class RaffleAwardEntity {
     private Integer sort;
     /** 奖品标题（名称） */
     private String awardTitle;
+
 }

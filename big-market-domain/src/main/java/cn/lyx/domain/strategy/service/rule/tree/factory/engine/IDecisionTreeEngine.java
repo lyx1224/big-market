@@ -3,6 +3,8 @@ package cn.lyx.domain.strategy.service.rule.tree.factory.engine;
 import cn.lyx.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * @author lyx
  * @description 执行引擎
@@ -10,5 +12,5 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface IDecisionTreeEngine {
-    DefaultTreeFactory.StrategyAwardVO process(String userId, Long strategyId, Integer awardId);
+    DefaultTreeFactory.StrategyAwardVO process(String userId, Long strategyId, Integer awardId, Date endDateTime);
 }
