@@ -1,75 +1,42 @@
-24-12-12.17:34:18.155 [main            ] INFO  RaffleStrategyControllerTest - Starting RaffleStrategyControllerTest using Java 1.8.0_392 on LYx14 with PID 7460 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
-24-12-12.17:34:18.156 [main            ] INFO  RaffleStrategyControllerTest - The following 1 profile is active: "dev"
-24-12-12.17:34:19.497 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-12-12.17:34:19.501 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-12-12.17:34:19.551 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
-24-12-12.17:34:21.238 [main            ] INFO  Version                - Redisson 3.23.4
-24-12-12.17:34:21.875 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.17:34:21.897 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.17:34:26.942 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-12-12.17:34:27.106 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
-24-12-12.17:34:27.283 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#fe8aaeb:0/SimpleConnection@2210e466 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 56185]
-24-12-12.17:34:27.484 [main            ] INFO  RaffleStrategyControllerTest - Started RaffleStrategyControllerTest in 9.9 seconds (JVM running for 10.967)
-24-12-12.17:34:27.929 [main            ] INFO  RaffleStrategyController - 查询抽奖奖品列表配开始 userId:xiaofuge activityId：100301
-24-12-12.17:34:27.988 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.17:34:28.338 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.17:34:28.786 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.17:34:28.817 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.17:34:28.840 [main            ] INFO  RaffleStrategyController - 查询抽奖奖品列表配置完成 userId:xiaofuge activityId：100301 response: {"code":"0000","data":[{"awardId":101,"awardTitle":"随机积分","isAwardUnlock":true,"sort":1,"waitUnLockCount":0},{"awardId":102,"awardTitle":"7等奖","isAwardUnlock":true,"sort":2,"waitUnLockCount":0},{"awardId":103,"awardTitle":"6等奖","isAwardUnlock":true,"sort":3,"waitUnLockCount":0},{"awardId":104,"awardTitle":"5等奖","isAwardUnlock":true,"sort":4,"waitUnLockCount":0},{"awardId":105,"awardTitle":"4等奖","isAwardUnlock":true,"sort":5,"waitUnLockCount":0},{"awardId":106,"awardRuleLockCount":1,"awardSubtitle":"抽奖1次后解锁","awardTitle":"3等奖","isAwardUnlock":false,"sort":6,"waitUnLockCount":1},{"awardId":107,"awardRuleLockCount":1,"awardSubtitle":"抽奖1次后解锁","awardTitle":"2等奖","isAwardUnlock":false,"sort":7,"waitUnLockCount":1},{"awardId":108,"awardRuleLockCount":2,"awardSubtitle":"抽奖2次后解锁","awardTitle":"1等奖","isAwardUnlock":false,"sort":8,"waitUnLockCount":2}],"info":"成功"}
-24-12-12.17:34:28.842 [main            ] INFO  RaffleStrategyControllerTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
-24-12-12.17:34:28.843 [main            ] INFO  RaffleStrategyControllerTest - 测试结果：{"code":"0000","data":[{"awardId":101,"awardTitle":"随机积分","isAwardUnlock":true,"sort":1,"waitUnLockCount":0},{"awardId":102,"awardTitle":"7等奖","isAwardUnlock":true,"sort":2,"waitUnLockCount":0},{"awardId":103,"awardTitle":"6等奖","isAwardUnlock":true,"sort":3,"waitUnLockCount":0},{"awardId":104,"awardTitle":"5等奖","isAwardUnlock":true,"sort":4,"waitUnLockCount":0},{"awardId":105,"awardTitle":"4等奖","isAwardUnlock":true,"sort":5,"waitUnLockCount":0},{"awardId":106,"awardRuleLockCount":1,"awardSubtitle":"抽奖1次后解锁","awardTitle":"3等奖","isAwardUnlock":false,"sort":6,"waitUnLockCount":1},{"awardId":107,"awardRuleLockCount":1,"awardSubtitle":"抽奖1次后解锁","awardTitle":"2等奖","isAwardUnlock":false,"sort":7,"waitUnLockCount":1},{"awardId":108,"awardRuleLockCount":2,"awardSubtitle":"抽奖2次后解锁","awardTitle":"1等奖","isAwardUnlock":false,"sort":8,"waitUnLockCount":2}],"info":"成功"}
-24-12-12.17:34:28.869 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.17:34:28.872 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.17:34:29.447 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.17:34:29.466 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.17:34:29.482 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.17:34:29.483 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.17:47:27.676 [main            ] INFO  RaffleStrategyControllerTest - Starting RaffleStrategyControllerTest using Java 1.8.0_392 on LYx14 with PID 3620 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
-24-12-12.17:47:27.677 [main            ] INFO  RaffleStrategyControllerTest - The following 1 profile is active: "dev"
-24-12-12.17:47:28.738 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-12-12.17:47:28.742 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-12-12.17:47:28.791 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
-24-12-12.17:47:30.183 [main            ] INFO  Version                - Redisson 3.23.4
-24-12-12.17:47:30.606 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.17:47:30.623 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.17:47:34.699 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-12-12.17:47:34.785 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
-24-12-12.17:47:34.872 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#5bb2fb2b:0/SimpleConnection@12200670 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 56868]
-24-12-12.17:47:34.967 [main            ] INFO  RaffleStrategyControllerTest - Started RaffleStrategyControllerTest in 7.768 seconds (JVM running for 9.345)
-24-12-12.17:47:35.063 [pool-3-thread-1 ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.17:47:35.063 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.17:47:35.337 [main            ] INFO  RaffleStrategyController - 查询抽奖奖品列表配开始 userId:xiaofuge activityId：100301
-24-12-12.17:47:35.349 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.17:47:35.486 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.17:47:35.486 [pool-3-thread-1 ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.17:47:35.487 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.17:47:35.846 [main            ] ERROR RaffleStrategyController - 查询抽奖奖品列表配置失败 userId:xiaofuge activityId：100301
-java.lang.ClassCastException: com.alibaba.fastjson.JSONObject cannot be cast to cn.lyx.domain.strategy.model.entity.StrategyAwardEntity
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
-	at java.util.ArrayList$Itr.forEachRemaining(ArrayList.java:901)
-	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
-	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:546)
-	at java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
-	at java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:505)
-	at cn.lyx.trigger.http.RaffleStrategyController.queryRaffleAwardList(RaffleStrategyController.java:109)
-	at cn.lyx.test.trigger.RaffleStrategyControllerTest.test_queryRaffleAwardList(RaffleStrategyControllerTest.java:35)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+24-12-15.01:43:52.466 [main            ] INFO  BehaviorRebateServiceTest - Starting BehaviorRebateServiceTest using Java 1.8.0_392 on LYx14 with PID 38584 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
+24-12-15.01:43:52.467 [main            ] INFO  BehaviorRebateServiceTest - The following 1 profile is active: "dev"
+24-12-15.01:43:53.803 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-15.01:43:53.808 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-15.01:43:53.890 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 0 Redis repository interfaces.
+24-12-15.01:43:55.920 [main            ] INFO  Version                - Redisson 3.23.4
+24-12-15.01:43:56.483 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-12-15.01:43:56.501 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-12-15.01:43:58.469 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'behaviorRebateService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.lyx.domain.rebate.event.SendRebateMessageEvent' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+24-12-15.01:43:58.734 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+24-12-15.01:43:58.785 [main            ] ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'cn.lyx.domain.rebate.event.SendRebateMessageEvent' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'cn.lyx.domain.rebate.event.SendRebateMessageEvent' in your configuration.
+
+24-12-15.01:43:58.791 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@291caca8] to prepare test instance [cn.lyx.test.domain.rebate.BehaviorRebateServiceTest@2499b971]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
-	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
-	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
-	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
@@ -88,347 +55,107 @@ java.lang.ClassCastException: com.alibaba.fastjson.JSONObject cannot be cast to 
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-24-12-12.17:47:35.909 [main            ] INFO  RaffleStrategyControllerTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
-24-12-12.17:47:35.914 [main            ] INFO  RaffleStrategyControllerTest - 测试结果：{"code":"0001","info":"未知失败"}
-24-12-12.17:47:35.947 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.17:47:35.950 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.17:47:35.955 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.17:47:36.960 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.17:47:36.964 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.17:47:36.965 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.17:48:59.776 [main            ] INFO  RaffleStrategyControllerTest - Starting RaffleStrategyControllerTest using Java 1.8.0_392 on LYx14 with PID 21020 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
-24-12-12.17:48:59.799 [main            ] INFO  RaffleStrategyControllerTest - The following 1 profile is active: "dev"
-24-12-12.17:49:00.891 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-12-12.17:49:00.894 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-12-12.17:49:00.944 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
-24-12-12.17:49:02.268 [main            ] INFO  Version                - Redisson 3.23.4
-24-12-12.17:49:02.710 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.17:49:02.730 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.17:49:07.038 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-12-12.17:49:07.176 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
-24-12-12.17:49:07.291 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#5bb2fb2b:0/SimpleConnection@12200670 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 57103]
-24-12-12.17:49:07.394 [main            ] INFO  RaffleStrategyControllerTest - Started RaffleStrategyControllerTest in 8.089 seconds (JVM running for 9.137)
-24-12-12.17:49:07.728 [main            ] INFO  RaffleStrategyController - 查询抽奖奖品列表配开始 userId:xiaofuge activityId：100301
-24-12-12.17:49:07.781 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.17:49:08.116 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.17:50:07.101 [Retail_HikariCP housekeeper] WARN  HikariPool             - Retail_HikariCP - Thread starvation or clock leap detected (housekeeper delta=58s868ms873µs800ns).
-24-12-12.17:51:09.163 [pool-3-thread-1 ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.17:51:09.163 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.17:51:09.190 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.17:51:09.192 [pool-3-thread-1 ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.17:51:20.948 [main            ] INFO  RaffleStrategyController - 查询抽奖奖品列表配置完成 userId:xiaofuge activityId：100301 response: {"code":"0000","data":[{"awardId":101,"awardTitle":"随机积分","isAwardUnlock":true,"sort":1,"waitUnLockCount":0},{"awardId":102,"awardTitle":"7等奖","isAwardUnlock":true,"sort":2,"waitUnLockCount":0},{"awardId":103,"awardTitle":"6等奖","isAwardUnlock":true,"sort":3,"waitUnLockCount":0},{"awardId":104,"awardTitle":"5等奖","isAwardUnlock":true,"sort":4,"waitUnLockCount":0},{"awardId":105,"awardTitle":"4等奖","isAwardUnlock":true,"sort":5,"waitUnLockCount":0},{"awardId":106,"awardRuleLockCount":1,"awardSubtitle":"抽奖1次后解锁","awardTitle":"3等奖","isAwardUnlock":false,"sort":6,"waitUnLockCount":1},{"awardId":107,"awardRuleLockCount":1,"awardSubtitle":"抽奖1次后解锁","awardTitle":"2等奖","isAwardUnlock":false,"sort":7,"waitUnLockCount":1},{"awardId":108,"awardRuleLockCount":2,"awardSubtitle":"抽奖2次后解锁","awardTitle":"1等奖","isAwardUnlock":false,"sort":8,"waitUnLockCount":2}],"info":"成功"}
-24-12-12.17:51:20.951 [main            ] INFO  RaffleStrategyControllerTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
-24-12-12.17:51:20.952 [main            ] INFO  RaffleStrategyControllerTest - 测试结果：{"code":"0000","data":[{"awardId":101,"awardTitle":"随机积分","isAwardUnlock":true,"sort":1,"waitUnLockCount":0},{"awardId":102,"awardTitle":"7等奖","isAwardUnlock":true,"sort":2,"waitUnLockCount":0},{"awardId":103,"awardTitle":"6等奖","isAwardUnlock":true,"sort":3,"waitUnLockCount":0},{"awardId":104,"awardTitle":"5等奖","isAwardUnlock":true,"sort":4,"waitUnLockCount":0},{"awardId":105,"awardTitle":"4等奖","isAwardUnlock":true,"sort":5,"waitUnLockCount":0},{"awardId":106,"awardRuleLockCount":1,"awardSubtitle":"抽奖1次后解锁","awardTitle":"3等奖","isAwardUnlock":false,"sort":6,"waitUnLockCount":1},{"awardId":107,"awardRuleLockCount":1,"awardSubtitle":"抽奖1次后解锁","awardTitle":"2等奖","isAwardUnlock":false,"sort":7,"waitUnLockCount":1},{"awardId":108,"awardRuleLockCount":2,"awardSubtitle":"抽奖2次后解锁","awardTitle":"1等奖","isAwardUnlock":false,"sort":8,"waitUnLockCount":2}],"info":"成功"}
-24-12-12.17:51:20.979 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.17:51:20.981 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.17:51:21.928 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.17:51:21.928 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.17:51:21.932 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.17:51:21.932 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.20:42:06.492 [main            ] INFO  RaffleActivityControllerTest - Starting RaffleActivityControllerTest using Java 1.8.0_392 on LYx14 with PID 13156 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
-24-12-12.20:42:06.494 [main            ] INFO  RaffleActivityControllerTest - The following 1 profile is active: "dev"
-24-12-12.20:42:07.784 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-12-12.20:42:07.788 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-12-12.20:42:07.840 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
-24-12-12.20:42:09.336 [main            ] INFO  Version                - Redisson 3.23.4
-24-12-12.20:42:09.753 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.20:42:09.770 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.20:42:14.204 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-12-12.20:42:14.459 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
-24-12-12.20:42:14.766 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2df3545d:0/SimpleConnection@2bc2e022 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 56422]
-24-12-12.20:42:14.956 [main            ] INFO  RaffleActivityControllerTest - Started RaffleActivityControllerTest in 8.976 seconds (JVM running for 10.139)
-24-12-12.20:42:15.153 [pool-3-thread-1 ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.20:42:15.153 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.20:42:15.509 [main            ] INFO  RaffleActivityController - 活动装配，数据预热，开始 activityId:100301
-24-12-12.20:42:15.511 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.20:42:15.703 [pool-3-thread-1 ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.20:42:15.703 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.20:42:15.703 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.20:42:16.512 [main            ] INFO  RaffleActivityController - 活动装配，数据预热，完成 activityId:100301
-24-12-12.20:42:16.518 [main            ] INFO  RaffleActivityControllerTest - 测试结果：{"code":"0000","data":true,"info":"成功"}
-24-12-12.20:42:16.540 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.20:42:16.543 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.20:42:16.934 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.20:42:16.947 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.20:42:16.951 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.20:42:16.952 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.20:42:59.251 [main            ] INFO  RaffleActivityControllerTest - Starting RaffleActivityControllerTest using Java 1.8.0_392 on LYx14 with PID 13136 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
-24-12-12.20:42:59.252 [main            ] INFO  RaffleActivityControllerTest - The following 1 profile is active: "dev"
-24-12-12.20:43:00.241 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-12-12.20:43:00.244 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-12-12.20:43:00.286 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
-24-12-12.20:43:01.688 [main            ] INFO  Version                - Redisson 3.23.4
-24-12-12.20:43:02.074 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.20:43:02.088 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.20:43:06.229 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-12-12.20:43:06.339 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
-24-12-12.20:43:06.461 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2df3545d:0/SimpleConnection@2bc2e022 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 56640]
-24-12-12.20:43:06.587 [main            ] INFO  RaffleActivityControllerTest - Started RaffleActivityControllerTest in 7.806 seconds (JVM running for 8.654)
-24-12-12.20:43:06.900 [main            ] INFO  RaffleActivityController - 活动抽奖 userId:xiaofuge activityId:100301
-24-12-12.20:43:07.143 [main            ] ERROR RaffleActivityController - 活动抽奖失败 userId:xiaofuge activityId:100301
-java.lang.ClassCastException: com.alibaba.fastjson.JSONObject cannot be cast to cn.lyx.domain.activity.model.entity.ActivityEntity
-	at cn.lyx.infrastructure.persistent.repository.ActivityRepository.queryRaffleActivityByActivityId(ActivityRepository.java:84)
-	at cn.lyx.infrastructure.persistent.repository.ActivityRepository$$FastClassBySpringCGLIB$$3bc7306b.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
-	at cn.lyx.infrastructure.persistent.repository.ActivityRepository$$EnhancerBySpringCGLIB$$5ced02c9.queryRaffleActivityByActivityId(<generated>)
-	at cn.lyx.domain.activity.service.partake.AbstractRaffleActivityPartake.createOrder(AbstractRaffleActivityPartake.java:46)
-	at cn.lyx.domain.activity.service.partake.AbstractRaffleActivityPartake.createOrder(AbstractRaffleActivityPartake.java:33)
-	at cn.lyx.trigger.http.RaffleActivityController.draw(RaffleActivityController.java:113)
-	at cn.lyx.test.trigger.RaffleActivityControllerTest.test_draw(RaffleActivityControllerTest.java:40)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
-	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
-	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
-	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-24-12-12.20:43:07.165 [main            ] INFO  RaffleActivityControllerTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
-24-12-12.20:43:07.168 [main            ] INFO  RaffleActivityControllerTest - 测试结果：{"code":"0001","info":"未知失败"}
-24-12-12.20:43:07.181 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.20:43:07.182 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.20:43:07.562 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.20:43:07.575 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.20:43:07.578 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.20:43:07.579 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.20:49:31.146 [main            ] INFO  RaffleActivityControllerTest - Starting RaffleActivityControllerTest using Java 1.8.0_392 on LYx14 with PID 3028 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
-24-12-12.20:49:31.147 [main            ] INFO  RaffleActivityControllerTest - The following 1 profile is active: "dev"
-24-12-12.20:49:32.131 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-12-12.20:49:32.134 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-12-12.20:49:32.177 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
-24-12-12.20:49:33.571 [main            ] INFO  Version                - Redisson 3.23.4
-24-12-12.20:49:33.973 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.20:49:33.989 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.20:49:37.853 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-12-12.20:49:37.949 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
-24-12-12.20:49:38.051 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2df3545d:0/SimpleConnection@2bc2e022 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 57106]
-24-12-12.20:49:38.183 [main            ] INFO  RaffleActivityControllerTest - Started RaffleActivityControllerTest in 7.474 seconds (JVM running for 8.833)
-24-12-12.20:49:38.447 [main            ] INFO  RaffleActivityController - 活动抽奖 userId:xiaofuge activityId:100301
-24-12-12.20:49:38.638 [main            ] ERROR RaffleActivityController - 活动抽奖失败 userId:xiaofuge activityId:100301
-java.lang.ClassCastException: com.alibaba.fastjson.JSONObject cannot be cast to cn.lyx.domain.activity.model.entity.ActivityEntity
-	at cn.lyx.infrastructure.persistent.repository.ActivityRepository.queryRaffleActivityByActivityId(ActivityRepository.java:84)
-	at cn.lyx.infrastructure.persistent.repository.ActivityRepository$$FastClassBySpringCGLIB$$3bc7306b.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
-	at cn.lyx.infrastructure.persistent.repository.ActivityRepository$$EnhancerBySpringCGLIB$$5ced02c9.queryRaffleActivityByActivityId(<generated>)
-	at cn.lyx.domain.activity.service.partake.AbstractRaffleActivityPartake.createOrder(AbstractRaffleActivityPartake.java:46)
-	at cn.lyx.domain.activity.service.partake.AbstractRaffleActivityPartake.createOrder(AbstractRaffleActivityPartake.java:33)
-	at cn.lyx.trigger.http.RaffleActivityController.draw(RaffleActivityController.java:113)
-	at cn.lyx.test.trigger.RaffleActivityControllerTest.test_draw(RaffleActivityControllerTest.java:40)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
-	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
-	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
-	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-24-12-12.20:49:38.662 [main            ] INFO  RaffleActivityControllerTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
-24-12-12.20:49:38.666 [main            ] INFO  RaffleActivityControllerTest - 测试结果：{"code":"0001","info":"未知失败"}
-24-12-12.20:49:38.683 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.20:49:38.685 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.20:49:39.157 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.20:49:39.170 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.20:49:39.173 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.20:49:39.173 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.20:51:55.285 [main            ] INFO  RaffleActivityControllerTest - Starting RaffleActivityControllerTest using Java 1.8.0_392 on LYx14 with PID 31324 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
-24-12-12.20:51:55.286 [main            ] INFO  RaffleActivityControllerTest - The following 1 profile is active: "dev"
-24-12-12.20:51:56.366 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-12-12.20:51:56.369 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-12-12.20:51:56.419 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 0 Redis repository interfaces.
-24-12-12.20:51:57.743 [main            ] INFO  Version                - Redisson 3.23.4
-24-12-12.20:51:58.130 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.20:51:58.145 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.20:52:01.889 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-12-12.20:52:02.010 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
-24-12-12.20:52:02.119 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2df3545d:0/SimpleConnection@58a8ea6f [delegate=amqp://admin@127.0.0.1:5672/, localPort= 57394]
-24-12-12.20:52:02.265 [main            ] INFO  RaffleActivityControllerTest - Started RaffleActivityControllerTest in 7.44 seconds (JVM running for 8.421)
-24-12-12.20:52:02.556 [main            ] INFO  RaffleActivityController - 活动抽奖 userId:xiaofuge activityId:100301
-24-12-12.20:52:02.854 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.20:52:03.183 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.20:52:03.289 [main            ] INFO  RaffleActivityController - 活动抽奖，创建订单 userId:xiaofuge activityId:100301 orderId:667641470851
-24-12-12.20:52:03.307 [main            ] ERROR RaffleActivityController - 活动抽奖失败 userId:xiaofuge activityId:100301
-java.lang.ClassCastException: com.alibaba.fastjson.JSONObject cannot be cast to cn.lyx.domain.strategy.model.entity.StrategyEntity
-	at cn.lyx.infrastructure.persistent.repository.StrategyRepository.queryStrategyEntityByStrategyId(StrategyRepository.java:121)
-	at cn.lyx.infrastructure.persistent.repository.StrategyRepository$$FastClassBySpringCGLIB$$f584b3cf.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
-	at cn.lyx.infrastructure.persistent.repository.StrategyRepository$$EnhancerBySpringCGLIB$$47f0cb75.queryStrategyEntityByStrategyId(<generated>)
-	at cn.lyx.domain.strategy.service.rule.chain.factory.DefaultChainFactory.openLogicChain(DefaultChainFactory.java:28)
-	at cn.lyx.domain.strategy.service.raffle.DefaultRaffleStrategy.raffleLogicChain(DefaultRaffleStrategy.java:38)
-	at cn.lyx.domain.strategy.service.AbstractRaffleStrategy.performRaffle(AbstractRaffleStrategy.java:52)
-	at cn.lyx.trigger.http.RaffleActivityController.draw(RaffleActivityController.java:116)
-	at cn.lyx.test.trigger.RaffleActivityControllerTest.test_draw(RaffleActivityControllerTest.java:40)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
-	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
-	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
-	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-24-12-12.20:52:03.322 [main            ] INFO  RaffleActivityControllerTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
-24-12-12.20:52:03.324 [main            ] INFO  RaffleActivityControllerTest - 测试结果：{"code":"0001","info":"未知失败"}
-24-12-12.20:52:03.345 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.20:52:03.347 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.20:52:04.247 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.20:52:04.255 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.20:52:04.258 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.20:52:04.259 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.20:53:54.221 [main            ] INFO  RaffleActivityControllerTest - Starting RaffleActivityControllerTest using Java 1.8.0_392 on LYx14 with PID 20912 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
-24-12-12.20:53:54.222 [main            ] INFO  RaffleActivityControllerTest - The following 1 profile is active: "dev"
-24-12-12.20:53:55.228 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-12-12.20:53:55.231 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-12-12.20:53:55.273 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.
-24-12-12.20:53:56.593 [main            ] INFO  Version                - Redisson 3.23.4
-24-12-12.20:53:56.987 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.20:53:57.000 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.20:54:00.943 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-12-12.20:54:01.088 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
-24-12-12.20:54:01.206 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2b9aeedb:0/SimpleConnection@7fbbdd8a [delegate=amqp://admin@127.0.0.1:5672/, localPort= 57586]
-24-12-12.20:54:01.331 [main            ] INFO  RaffleActivityControllerTest - Started RaffleActivityControllerTest in 7.535 seconds (JVM running for 8.347)
-24-12-12.20:54:01.584 [main            ] INFO  RaffleActivityController - 活动装配，数据预热，开始 activityId:100301
-24-12-12.20:54:01.615 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.20:54:01.866 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.20:54:02.077 [main            ] INFO  RaffleActivityController - 活动装配，数据预热，完成 activityId:100301
-24-12-12.20:54:02.355 [main            ] INFO  RaffleActivityControllerTest - 测试结果：{"code":"0000","data":true,"info":"成功"}
-24-12-12.20:54:02.373 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.20:54:02.375 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.20:54:03.312 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.20:54:03.324 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.20:54:03.327 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.20:54:03.328 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.20:54:11.037 [main            ] INFO  RaffleActivityControllerTest - Starting RaffleActivityControllerTest using Java 1.8.0_392 on LYx14 with PID 24648 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
-24-12-12.20:54:11.038 [main            ] INFO  RaffleActivityControllerTest - The following 1 profile is active: "dev"
-24-12-12.20:54:12.067 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-12-12.20:54:12.070 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-12-12.20:54:12.125 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38 ms. Found 0 Redis repository interfaces.
-24-12-12.20:54:13.524 [main            ] INFO  Version                - Redisson 3.23.4
-24-12-12.20:54:13.910 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.20:54:13.927 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
-24-12-12.20:54:18.463 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-12-12.20:54:18.613 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
-24-12-12.20:54:18.792 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2b9aeedb:0/SimpleConnection@7fbbdd8a [delegate=amqp://admin@127.0.0.1:5672/, localPort= 57702]
-24-12-12.20:54:18.956 [main            ] INFO  RaffleActivityControllerTest - Started RaffleActivityControllerTest in 8.367 seconds (JVM running for 9.237)
-24-12-12.20:54:19.375 [main            ] INFO  RaffleActivityController - 活动抽奖 userId:xiaofuge activityId:100301
-24-12-12.20:54:19.555 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.20:54:19.893 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.20:54:20.039 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.20:54:20.073 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.20:54:20.255 [main            ] INFO  AbstractRaffleActivityPartake - 创建参与活动订单[已存在未消费] userId:xiaofuge activityId:100301 userRaffleOrderEntity:{"activityId":100301,"activityName":"测试活动","orderId":"667641470851","orderState":"create","orderTime":1734007923000,"strategyId":100006,"userId":"xiaofuge"}
-24-12-12.20:54:20.255 [main            ] INFO  RaffleActivityController - 活动抽奖，创建订单 userId:xiaofuge activityId:100301 orderId:667641470851
-24-12-12.20:54:20.289 [main            ] INFO  DefaultLogicChain      - 抽奖责任链-默认处理 userId: xiaofuge strategyId: 100006 ruleModel: rule_default awardId: 107
-24-12-12.20:54:20.292 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 107 rule_default
-24-12-12.20:54:20.293 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
-24-12-12.20:54:20.342 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
-24-12-12.20:54:20.391 [main            ] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:xiaofuge strategyId:100006 awardId:107
-24-12-12.20:54:20.400 [main            ] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁【放行】 userId:xiaofuge strategyId:100006 awardId:107 raffleCount:28 userRaffleCount:28
-24-12-12.20:54:20.402 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock_1 node:rule_lock code:0000
-24-12-12.20:54:20.402 [main            ] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减 userId:xiaofuge strategyId:100006 awardId:107
-24-12-12.20:54:20.412 [main            ] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减-成功 userId:xiaofuge strategyId:100006 awardId:107
-24-12-12.20:54:20.451 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock_1 node:rule_stock code:0001
-24-12-12.20:54:20.452 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树 xiaofuge 100006 107 null
-24-12-12.20:54:20.561 [main            ] INFO  EventPublisher         - 发送MQ消息 topic:send_award message:{"data":{"awardId":107,"awardTitle":"2等奖","userId":"xiaofuge"},"id":"18444854881","timestamp":1734008060471}
-24-12-12.20:54:20.585 [main            ] INFO  RaffleActivityControllerTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
-24-12-12.20:54:20.590 [main            ] INFO  RaffleActivityControllerTest - 测试结果：{"code":"0000","data":{"awardId":107,"awardIndex":7,"awardTitle":"2等奖"},"info":"成功"}
-24-12-12.20:54:20.603 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"data":{"awardId":107,"awardTitle":"2等奖","userId":"xiaofuge"},"id":"18444854881","timestamp":1734008060471}
-24-12-12.20:54:20.620 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.20:54:20.623 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-12.20:54:20.918 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.20:54:21.616 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-12.20:54:21.624 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-12.20:54:21.626 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'behaviorRebateService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.lyx.domain.rebate.event.SendRebateMessageEvent' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
+	... 27 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.lyx.domain.rebate.event.SendRebateMessageEvent' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:544)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 43 common frames omitted
+24-12-15.01:45:05.456 [main            ] INFO  BehaviorRebateServiceTest - Starting BehaviorRebateServiceTest using Java 1.8.0_392 on LYx14 with PID 38276 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
+24-12-15.01:45:05.458 [main            ] INFO  BehaviorRebateServiceTest - The following 1 profile is active: "dev"
+24-12-15.01:45:06.529 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-15.01:45:06.534 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-15.01:45:06.592 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 0 Redis repository interfaces.
+24-12-15.01:45:08.644 [main            ] INFO  Version                - Redisson 3.23.4
+24-12-15.01:45:09.287 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-12-15.01:45:09.309 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-12-15.01:45:14.764 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-15.01:45:14.889 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+24-12-15.01:45:15.063 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#1a0f349:0/SimpleConnection@51df2a41 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 52458]
+24-12-15.01:45:15.248 [main            ] INFO  BehaviorRebateServiceTest - Started BehaviorRebateServiceTest in 10.264 seconds (JVM running for 11.213)
+24-12-15.01:45:15.717 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-12-15.01:45:16.054 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-12-15.01:45:16.092 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-12-15.01:45:16.120 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-12-15.01:45:16.579 [main            ] INFO  BehaviorRebateServiceTest - 请求参数：{"behaviorTypeVO":"SIGN","outBusinessNo":"20241215","userId":"xiaofuge"}
+24-12-15.01:45:16.589 [main            ] INFO  BehaviorRebateServiceTest - 测试结果：["660665154862","203793793482"]
+24-12-15.01:45:16.628 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-15.01:45:16.631 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-15.01:45:17.225 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-15.01:45:17.236 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-15.01:45:17.238 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-15.01:45:17.239 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-15.01:54:38.812 [main            ] INFO  BehaviorRebateServiceTest - Starting BehaviorRebateServiceTest using Java 1.8.0_392 on LYx14 with PID 34456 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
+24-12-15.01:54:38.813 [main            ] INFO  BehaviorRebateServiceTest - The following 1 profile is active: "dev"
+24-12-15.01:54:40.868 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-15.01:54:40.873 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-15.01:54:40.970 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 0 Redis repository interfaces.
+24-12-15.01:54:43.190 [main            ] INFO  Version                - Redisson 3.23.4
+24-12-15.01:54:43.684 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-12-15.01:54:43.723 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-12-15.01:54:49.524 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-15.01:54:49.698 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+24-12-15.01:54:50.002 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#1a0f349:0/SimpleConnection@51df2a41 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 53495]
+24-12-15.01:54:50.255 [main            ] INFO  BehaviorRebateServiceTest - Started BehaviorRebateServiceTest in 12.062 seconds (JVM running for 13.833)
+24-12-15.01:54:50.710 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-12-15.01:54:51.117 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-12-15.01:54:51.162 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-12-15.01:54:51.193 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-12-15.01:54:51.652 [main            ] INFO  EventPublisher         - 发送MQ消息 topic:send_rebate message:{"data":{"bizId":"xiaofuge_sku_20241216","rebateConfig":"9011","rebateType":"sign","userId":"xiaofuge"},"id":"12943620162","timestamp":1734198891157}
+24-12-15.01:54:51.677 [main            ] INFO  EventPublisher         - 发送MQ消息 topic:send_rebate message:{"data":{"bizId":"xiaofuge_integral_20241216","rebateConfig":"10","rebateType":"sign","userId":"xiaofuge"},"id":"24347374305","timestamp":1734198891159}
+24-12-15.01:54:51.690 [main            ] INFO  BehaviorRebateServiceTest - 请求参数：{"behaviorTypeVO":"SIGN","outBusinessNo":"20241216","userId":"xiaofuge"}
+24-12-15.01:54:51.697 [main            ] INFO  BehaviorRebateServiceTest - 测试结果：["811851844766","443175122696"]
+24-12-15.01:54:51.748 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-15.01:54:51.751 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-15.01:54:52.163 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-15.01:54:52.191 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-15.01:54:52.195 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-15.01:54:52.196 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-15.01:55:53.066 [main            ] INFO  BehaviorRebateServiceTest - Starting BehaviorRebateServiceTest using Java 1.8.0_392 on LYx14 with PID 38524 (started by 18396 in C:\D\IdeaProjects\big-market\big-market-app)
+24-12-15.01:55:53.067 [main            ] INFO  BehaviorRebateServiceTest - The following 1 profile is active: "dev"
+24-12-15.01:55:54.885 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-15.01:55:54.890 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-15.01:55:55.024 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 109 ms. Found 0 Redis repository interfaces.
+24-12-15.01:55:56.886 [main            ] INFO  Version                - Redisson 3.23.4
+24-12-15.01:55:57.488 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-12-15.01:55:57.507 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:16379
+24-12-15.01:56:03.328 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-15.01:56:03.488 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+24-12-15.01:56:03.650 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#1a0f349:0/SimpleConnection@51df2a41 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 53685]
+24-12-15.01:56:03.768 [main            ] INFO  BehaviorRebateServiceTest - Started BehaviorRebateServiceTest in 11.475 seconds (JVM running for 12.862)
+24-12-15.01:56:04.115 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-12-15.01:56:04.438 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-12-15.01:56:04.481 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-12-15.01:56:04.525 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-12-15.01:56:04.801 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-15.01:56:04.804 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-15.01:56:05.054 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+24-12-15.01:56:05.100 [pool-3-thread-2 ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+24-12-15.01:56:05.744 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-15.01:56:05.774 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-15.01:56:05.778 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-15.01:56:05.778 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
