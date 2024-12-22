@@ -25,6 +25,8 @@ public class BehaviorRebateOrderEntity {
     private String rebateDesc;
     /** 返利类型（sku 活动库存充值商品、integral 用户活动积分） */
     private String rebateType;
+    /** 业务仿重ID - 外部透传，方便查询使用 */
+    private String outBusinessNo;
     /** 返利配置【sku值，积分值】 */
     private String rebateConfig;
     /** 业务ID - 拼接的唯一值 */

@@ -1,6 +1,7 @@
 package cn.lyx.domain.rebate.repository;
 
 import cn.lyx.domain.rebate.model.aggregate.BehaviorRebateAggregate;
+import cn.lyx.domain.rebate.model.entity.BehaviorRebateOrderEntity;
 import cn.lyx.domain.rebate.model.valobj.BehaviorTypeVO;
 import cn.lyx.domain.rebate.model.valobj.DailyBehaviorRebateVO;
 
@@ -16,4 +17,5 @@ public interface IBehaviorRebateRepository {
     void saveUserRebateRecord(String userId, List<BehaviorRebateAggregate> behaviorRebateAggregates);
 
 
+    List<BehaviorRebateOrderEntity> queryOrderByOutBusinessNo(String userId, String outBusinessNo);
 }
