@@ -1,5 +1,6 @@
 package cn.lyx.domain.award.service;
 
+import cn.lyx.domain.award.model.entity.DistributeAwardEntity;
 import cn.lyx.domain.award.model.entity.UserAwardRecordEntity;
 
 /**
@@ -9,4 +10,9 @@ import cn.lyx.domain.award.model.entity.UserAwardRecordEntity;
  */
 public interface IAwardService {
     void saveUserAwardRecord(UserAwardRecordEntity userAwardRecordEntity);
+
+    /**
+     * 配送发货奖品
+     */
+    void distributeAward(DistributeAwardEntity distributeAwardEntity);
 }
