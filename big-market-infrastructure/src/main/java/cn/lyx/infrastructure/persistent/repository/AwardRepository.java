@@ -14,15 +14,19 @@ import cn.lyx.infrastructure.persistent.po.Task;
 import cn.lyx.infrastructure.persistent.po.UserAwardRecord;
 import cn.lyx.infrastructure.persistent.po.UserCreditAccount;
 import cn.lyx.infrastructure.persistent.po.UserRaffleOrder;
+import cn.lyx.infrastructure.persistent.redis.IRedisService;
+import cn.lyx.types.common.Constants;
 import cn.lyx.types.enums.ResponseCode;
 import cn.lyx.types.exception.AppException;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
+import org.redisson.api.RLock;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.support.TransactionTemplate;
 import org.yaml.snakeyaml.constructor.DuplicateKeyException;
 
 import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author lyx
@@ -45,6 +49,8 @@ public class AwardRepository implements IAwardRepository {
     private TransactionTemplate transactionTemplate;
     @Resource
     private EventPublisher eventPublisher;
+    @Resource
+    private IRedisService redisService;
     @Resource
     private IUserRaffleOrderDao userRaffleOrderDao;
     @Resource
@@ -145,14 +151,18 @@ public class AwardRepository implements IAwardRepository {
         userCreditAccountReq.setAvailableAmount(userCreditAwardEntity.getCreditAmount());
         userCreditAccountReq.setAccountStatus(AccountStatusVO.open.getCode());
 
+        RLock lock = redisService.getLock(Constants.RedisKey.ACTIVITY_ACCOUNT_LOCK + userId);
         try{
+            lock.lock(3, TimeUnit.SECONDS);
             dbRouter.doRouter(userId);
             transactionTemplate.execute(status -> {
                 try {
                     // 更新积分 || 创建积分账户
-                    int updateAccountCount = userCreditAccountDao.updateAddAmount(userCreditAccountReq);
-                    if (0 == updateAccountCount) {
+                    UserCreditAccount userCreditAccountRes = userCreditAccountDao.queryUserCreditAccount(userCreditAccountReq);
+                    if (null == userCreditAccountRes) {
                         userCreditAccountDao.insert(userCreditAccountReq);
+                    } else {
+                        userCreditAccountDao.updateAddAmount(userCreditAccountReq);
                     }
 
                     // 更新奖品记录
@@ -170,6 +180,7 @@ public class AwardRepository implements IAwardRepository {
             });
         }finally {
             dbRouter.clear();
+            lock.unlock();
         }
 
 
