@@ -1,6 +1,7 @@
 package cn.lyx.domain.activity.model.aggregate;
 
 import cn.lyx.domain.activity.model.entity.ActivityOrderEntity;
+import cn.lyx.domain.activity.model.valobj.OrderStateVO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -45,5 +46,9 @@ public class CreateQuotaOrderAggregate {
      * 活动订单实体
      */
     private ActivityOrderEntity activityOrderEntity;
+
+    public void setOrderState(OrderStateVO orderState) {
+        this.activityOrderEntity.setState(orderState);
+    }
 
 }

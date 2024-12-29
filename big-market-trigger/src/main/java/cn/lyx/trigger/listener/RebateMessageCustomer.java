@@ -2,6 +2,7 @@ package cn.lyx.trigger.listener;
 
 
 import cn.lyx.domain.activity.model.entity.SkuRechargeEntity;
+import cn.lyx.domain.activity.model.valobj.OrderTradeTypeVO;
 import cn.lyx.domain.activity.service.IRaffleActivityAccountQuotaService;
 import cn.lyx.domain.credit.model.entity.TradeEntity;
 import cn.lyx.domain.credit.model.valobj.TradeNameVO;
@@ -59,6 +60,7 @@ public class RebateMessageCustomer {
                     skuRechargeEntity.setUserId(rebateMessage.getUserId());
                     skuRechargeEntity.setSku(Long.valueOf(rebateMessage.getRebateConfig()));
                     skuRechargeEntity.setOutBusinessNo(rebateMessage.getBizId());
+                    skuRechargeEntity.setOrderTradeType(OrderTradeTypeVO.rebate_no_pay_trade);
                     raffleActivityAccountQuotaService.createOrder(skuRechargeEntity);
                     break;
                 case "integral":

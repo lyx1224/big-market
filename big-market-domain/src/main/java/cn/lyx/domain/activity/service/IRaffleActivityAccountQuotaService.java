@@ -1,6 +1,7 @@
 package cn.lyx.domain.activity.service;
 
 import cn.lyx.domain.activity.model.entity.ActivityAccountEntity;
+import cn.lyx.domain.activity.model.entity.DeliveryOrderEntity;
 import cn.lyx.domain.activity.model.entity.SkuRechargeEntity;
 
 /**
@@ -20,6 +21,8 @@ public interface IRaffleActivityAccountQuotaService {
      * @return 活动ID
      */
     String createOrder(SkuRechargeEntity skuRechargeEntity);
+
+    void updateOrder(DeliveryOrderEntity deliveryOrderEntity);
 
     Integer queryRaffleActivityAccountDayPartakeCount(Long activityId, String userId);
     /**
