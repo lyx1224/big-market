@@ -5,6 +5,7 @@ import cn.lyx.domain.activity.model.aggregate.CreateQuotaOrderAggregate;
 import cn.lyx.domain.activity.model.entity.*;
 import cn.lyx.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -63,4 +64,6 @@ public interface IActivityRepository {
     UnpaidActivityOrderEntity queryUnpaidActivityOrder(SkuRechargeEntity skuRechargeEntity);
 
     List<SkuProductEntity> querySkuProductEntityListByActivityId(Long activityId);
+
+    BigDecimal queryUserCreditAccountAmount(String userId);
 }
