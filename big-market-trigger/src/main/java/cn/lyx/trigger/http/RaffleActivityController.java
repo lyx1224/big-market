@@ -25,10 +25,13 @@ import cn.lyx.domain.strategy.service.armory.IStrategyArmory;
 import cn.lyx.trigger.api.IRaffleActivityService;
 import cn.lyx.trigger.api.dto.*;
 import cn.lyx.types.annotations.DCCValue;
+import cn.lyx.types.annotations.RateLimiterAccessInterceptor;
 import cn.lyx.types.enums.ResponseCode;
 import cn.lyx.types.exception.AppException;
 import cn.lyx.types.model.Response;
 import com.alibaba.fastjson.JSON;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -135,12 +138,18 @@ public class RaffleActivityController implements IRaffleActivityService {
      *     "activityId": 100301
      * }'
      */
+    @RateLimiterAccessInterceptor(key = "userId", fallbackMethod = "drawRateLimiterError", permitsPerSecond = 1.0d, blacklistCount = 1)
+    @HystrixCommand(commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "150")
+    }, fallbackMethod = "drawHystrixError"
+    )
     @RequestMapping(value = "draw",method = RequestMethod.POST)
     @Override
     public Response<ActivityDrawResponseDTO> draw(@RequestBody ActivityDrawRequestDTO request) {
         try{
-            log.info("活动抽奖 userId:{} activityId:{}", request.getUserId(), request.getActivityId());
-            if (!"open".equals(degradeSwitch)) {
+            log.info("活动抽奖开始 userId:{} activityId:{}", request.getUserId(), request.getActivityId());
+            // 0. 降级开关【open 开启、close 关闭】
+            if (StringUtils.isNotBlank(degradeSwitch) && "open".equals(degradeSwitch)) {
                 return Response.<ActivityDrawResponseDTO>builder()
                         .code(ResponseCode.DEGRADE_SWITCH.getCode())
                         .info(ResponseCode.DEGRADE_SWITCH.getInfo())
@@ -198,6 +207,30 @@ public class RaffleActivityController implements IRaffleActivityService {
                     .build();
         }
     }
+
+    public Response<ActivityDrawResponseDTO> drawRateLimiterError(@RequestBody ActivityDrawRequestDTO request) {
+        log.info("活动抽奖限流 userId:{} activityId:{}", request.getUserId(), request.getActivityId());
+        return Response.<ActivityDrawResponseDTO>builder()
+                .code(ResponseCode.RATE_LIMITER.getCode())
+                .info(ResponseCode.RATE_LIMITER.getInfo())
+                .build();
+    }
+    public Response<ActivityDrawResponseDTO> drawHystrixError(@RequestBody ActivityDrawRequestDTO request) {
+        log.info("活动抽奖熔断 userId:{} activityId:{}", request.getUserId(), request.getActivityId());
+        return Response.<ActivityDrawResponseDTO>builder()
+                .code(ResponseCode.HYSTRIX.getCode())
+                .info(ResponseCode.HYSTRIX.getInfo())
+                .build();
+    }
+
+    /**
+     * 限流代码（限流aop切面和注解的搭配使用比一般的aop更加复杂）
+     * 添加切面的类为什么配置中心不能通过class<?>反射 这里要学springboot才行
+     * 熔断使用的外部包，以及熔断的使用机制
+     * qpipost进行测试
+     */
+
+
     /**
      * 日历签到返利接口
      *
